@@ -1,0 +1,13 @@
+name: Output information
+on: workflow_dispatch
+jobs:
+    info:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output GitHub context
+              run: |
+                  echo " ${{ toJSON(github) }}"
+                  echo "The workflow name is ${{ github.workflow }}"
+                  echo "The workflow run ID is ${{ github.run_id }}"
+                  echo "The workflow run number is ${{ github.run_number }}"
+                  echo "The workflow run attempt is ${{ github.run_attempt }}"
